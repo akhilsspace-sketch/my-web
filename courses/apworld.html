@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP World History — HistoriAP</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f9f8f5;
+      color: #1a1a1a;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-bottom: 1px solid #e5e2d9;
+    }
+    .nav-logo { font-size: 20px; font-weight: 700; color: #1a1a1a; }
+    .nav-logo span { color: #185FA5; }
+    .nav-logo a { text-decoration: none; color: inherit; cursor: pointer; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { font-size: 14px; color: #555; text-decoration: none; font-family: Arial, sans-serif; }
+    .nav-links a:hover { color: #1a1a1a; }
+    .content { padding: 2rem; max-width: 900px; margin: 0 auto; }
+    .breadcrumb { font-size: 13px; color: #999; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: #185FA5; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    h1 { font-size: 32px; margin-bottom: 0.5rem; }
+    .subtitle { font-size: 15px; color: #666; margin-bottom: 2rem; font-family: Arial, sans-serif; }
+    .chapters { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 1.5rem; }
+    .chapter-card {
+      background: #fff;
+      border: 1px solid #e5e2d9;
+      border-radius: 10px;
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .chapter-card:hover { border-color: #185FA5; box-shadow: 0 2px 10px rgba(24,95,165,0.08); }
+    .chapter-num { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif; }
+    .chapter-title { font-size: 16px; font-weight: 700; margin: 0.5rem 0; }
+    .chapter-desc { font-size: 12px; color: #777; font-family: Arial, sans-serif; }
+    footer {
+      border-top: 1px solid #e5e2d9;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      background: #fff;
+      font-size: 12px;
+      color: #999;
+      margin-top: 3rem;
+    }
+    @media (max-width: 600px) {
+      nav { flex-direction: column; gap: 1rem; }
+      .nav-links { display: none; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo"><a onclick="history.back()">Histori<span>AP</span></a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#courses">Courses</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / AP World History</div>
+    <h1>AP World History</h1>
+    <p class="subtitle">Complete AMSCO chapter notes for Units 1–9. Master world history from 1200 CE to present with organized, searchable notes aligned with the College Board curriculum.</p>
+
+    <h2 style="font-size: 20px; margin-top: 2rem; margin-bottom: 1rem;">Units & Chapters</h2>
+    <div class="chapters">
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 1</div>
+        <div class="chapter-title">1200–1450</div>
+        <div class="chapter-desc">Developments in East Asia, South Asia, Islamic world</div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 2</div>
+        <div class="chapter-title">1450–1750</div>
+        <div class="chapter-desc">European exploration, trade networks, colonization</div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 3</div>
+        <div class="chapter-title">1750–1900</div>
+        <div class="chapter-desc">Revolutions, industrialization, imperialism</div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 4</div>
+        <div class="chapter-title">1900–1945</div>
+        <div class="chapter-desc">World Wars, rise of nationalism, totalitarianism</div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 5</div>
+        <div class="chapter-title">1945–1991</div>
+        <div class="chapter-desc">Cold War, decolonization, postcolonial world</div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 6</div>
+        <div class="chapter-title">1991–2012</div>
+        <div class="chapter-desc">Globalization, terrorism, regional conflicts</div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 7</div>
+        <div class="chapter-title">Global interconnections</div>
+        <div class="chapter-desc">Cross-cutting themes, comparative analysis</div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 8</div>
+        <div class="chapter-title">Thematic review</div>
+        <div class="chapter-desc">Society, culture, technology, trade patterns</div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Unit 9</div>
+        <div class="chapter-title">Exam prep</div>
+        <div class="chapter-desc">Practice questions, essay strategies, review</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 HistoriAP · Free for students
+  </footer>
+</body>
+</html>

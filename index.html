@@ -229,8 +229,8 @@
     <h1>AMSCO notes for every <span>AP History</span> course</h1>
     <p>Complete, chapter-by-chapter notes for APUSH, AP World, AP Euro, and AP Gov — organized, searchable, and actually useful for exam prep.</p>
     <div class="hero-btns">
-      <button class="btn-primary">Browse notes</button>
-      <button class="btn-secondary">Pick my course</button>
+      <button class="btn-primary" onclick="document.querySelector('.courses').scrollIntoView({behavior:'smooth'})">Browse notes</button>
+      <button class="btn-secondary" onclick="document.querySelector('.courses').scrollIntoView({behavior:'smooth'})">Pick my course</button>
     </div>
   </div>
 
@@ -251,35 +251,43 @@
   </div>
 
   <!-- COURSES -->
-  <div class="section">
+  <div class="section" id="courses">
     <div class="section-label">Courses</div>
     <h2>Choose your exam</h2>
     <p>Notes are organized by course and chapter, following the AMSCO textbook structure you already know.</p>
     <div class="courses">
-      <div class="course-card">
-        <div class="course-icon">🇺🇸</div>
-        <div class="course-title">AP U.S. History</div>
-        <div class="course-sub">APUSH · Periods 1–9</div>
-        <div class="course-tag">Most popular</div>
-      </div>
-      <div class="course-card">
-        <div class="course-icon">🌍</div>
-        <div class="course-title">AP World History</div>
-        <div class="course-sub">Units 1–9</div>
-        <div class="course-tag">Modern &amp; ancient</div>
-      </div>
-      <div class="course-card">
-        <div class="course-icon">🏰</div>
-        <div class="course-title">AP Euro</div>
-        <div class="course-sub">European History</div>
-        <div class="course-tag">Renaissance–present</div>
-      </div>
-      <div class="course-card">
-        <div class="course-icon">⚖️</div>
-        <div class="course-title">AP Gov</div>
-        <div class="course-sub">U.S. Government</div>
-        <div class="course-tag">Constitution &amp; policy</div>
-      </div>
+      <a href="courses/apush.html" style="text-decoration:none;color:inherit;">
+        <div class="course-card">
+          <div class="course-icon">🇺🇸</div>
+          <div class="course-title">AP U.S. History</div>
+          <div class="course-sub">APUSH · Periods 1–9</div>
+          <div class="course-tag">Most popular</div>
+        </div>
+      </a>
+      <a href="courses/apworld.html" style="text-decoration:none;color:inherit;">
+        <div class="course-card">
+          <div class="course-icon">🌍</div>
+          <div class="course-title">AP World History</div>
+          <div class="course-sub">Units 1–9</div>
+          <div class="course-tag">Modern &amp; ancient</div>
+        </div>
+      </a>
+      <a href="courses/apeuro.html" style="text-decoration:none;color:inherit;">
+        <div class="course-card">
+          <div class="course-icon">🏰</div>
+          <div class="course-title">AP Euro</div>
+          <div class="course-sub">European History</div>
+          <div class="course-tag">Renaissance–present</div>
+        </div>
+      </a>
+      <a href="courses/apgov.html" style="text-decoration:none;color:inherit;">
+        <div class="course-card">
+          <div class="course-icon">⚖️</div>
+          <div class="course-title">AP Gov</div>
+          <div class="course-sub">U.S. Government</div>
+          <div class="course-tag">Constitution &amp; policy</div>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -323,7 +331,7 @@
   <div class="cta-block">
     <h2>Start studying smarter</h2>
     <p>Pick your course and get instant access to every chapter's notes — no sign-up required.</p>
-    <button class="btn-white">Browse all courses</button>
+    <button class="btn-white" onclick="document.querySelector('.courses').scrollIntoView({behavior:'smooth'})">Browse all courses</button>
   </div>
 
   <!-- FOOTER -->
