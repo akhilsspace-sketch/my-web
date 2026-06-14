@@ -150,7 +150,27 @@
       box-shadow: 0 2px 8px rgba(24,95,165,0.08);
       position: relative;
       overflow: hidden;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
+    .course-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      opacity: 0.08;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+    }
+    .apush-card::after { background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23c81e32"><polygon points="50,20 40,35 60,35" fill="%23c81e32"/><rect x="45" y="35" width="10" height="40" fill="%23c81e32"/></g></svg>'); }
+    .apworld-card::after { background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23b8860b"><circle cx="50" cy="50" r="35" fill="%23b8860b" stroke="%23b8860b" stroke-width="2"/></g></svg>'); }
+    .apeuro-card::after { background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%239333ea"><rect x="48" y="30" width="4" height="55" fill="%239333ea"/><polygon points="46,32 54,32 50,20" fill="%239333ea"/></g></svg>'); }
+    .apgov-card::after { background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%2322c55e"><rect x="44" y="20" width="12" height="55" fill="%2322c55e"/><circle cx="50" cy="20" r="5" fill="%2322c55e"/></g></svg>'); }
     .course-card::before {
       content: '';
       position: absolute;
