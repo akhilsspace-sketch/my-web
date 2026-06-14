@@ -171,6 +171,15 @@
     .course-card:hover::before {
       opacity: 1;
     }
+    /* Color-coded courses */
+    .apush-card::before { background: linear-gradient(90deg, #c81e32, #8b1528); }
+    .apush-card:hover { border-color: #c81e32; box-shadow: 0 12px 24px rgba(200, 30, 50, 0.16); background: linear-gradient(135deg, #fff5f6 0%, #faf1f2 100%); }
+    .apworld-card::before { background: linear-gradient(90deg, #b8860b, #8b6708); }
+    .apworld-card:hover { border-color: #b8860b; box-shadow: 0 12px 24px rgba(184, 134, 11, 0.16); background: linear-gradient(135deg, #fffaf5 0%, #fdf7f0 100%); }
+    .apeuro-card::before { background: linear-gradient(90deg, #9333ea, #7e22ce); }
+    .apeuro-card:hover { border-color: #9333ea; box-shadow: 0 12px 24px rgba(147, 51, 234, 0.16); background: linear-gradient(135deg, #faf5ff 0%, #f5f1fa 100%); }
+    .apgov-card::before { background: linear-gradient(90deg, #22c55e, #16a34a); }
+    .apgov-card:hover { border-color: #22c55e; box-shadow: 0 12px 24px rgba(34, 197, 94, 0.16); background: linear-gradient(135deg, #f0fdf4 0%, #f0fdf4 100%); }
     .course-icon { font-size: 28px; margin-bottom: 1rem; }
     .course-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #111; }
     .course-sub { font-size: 13px; color: #888; font-weight: 500; margin-bottom: 0.75rem; }
@@ -327,7 +336,7 @@
     <p>Notes are organized by course and chapter, following the AMSCO textbook structure you already know.</p>
     <div class="courses">
       <a href="courses/apush.html" style="text-decoration:none;color:inherit;">
-        <div class="course-card">
+        <div class="course-card apush-card">
           <div class="course-icon">🇺🇸</div>
           <div class="course-title">AP U.S. History</div>
           <div class="course-sub">APUSH · Periods 1–9</div>
@@ -335,7 +344,7 @@
         </div>
       </a>
       <a href="courses/apworld.html" style="text-decoration:none;color:inherit;">
-        <div class="course-card">
+        <div class="course-card apworld-card">
           <div class="course-icon">🌍</div>
           <div class="course-title">AP World History</div>
           <div class="course-sub">Units 1–9</div>
@@ -343,7 +352,7 @@
         </div>
       </a>
       <a href="courses/apeuro.html" style="text-decoration:none;color:inherit;">
-        <div class="course-card">
+        <div class="course-card apeuro-card">
           <div class="course-icon">🏰</div>
           <div class="course-title">AP Euro</div>
           <div class="course-sub">European History</div>
@@ -351,7 +360,7 @@
         </div>
       </a>
       <a href="courses/apgov.html" style="text-decoration:none;color:inherit;">
-        <div class="course-card">
+        <div class="course-card apgov-card">
           <div class="course-icon">⚖️</div>
           <div class="course-title">AP Gov</div>
           <div class="course-sub">U.S. Government</div>

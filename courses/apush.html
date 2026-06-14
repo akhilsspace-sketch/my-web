@@ -11,7 +11,21 @@
       background: linear-gradient(135deg, #f9f8f5 0%, #f5f3f0 100%);
       color: #1a1a1a;
       line-height: 1.6;
+      position: relative;
     }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(200, 30, 50, 0.02) 35px, rgba(200, 30, 50, 0.02) 70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .content { position: relative; z-index: 1; }
     nav {
       display: flex;
       align-items: center;
@@ -29,9 +43,9 @@
     .nav-links a:hover { color: #185FA5; }
     .content { padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
     .breadcrumb { font-size: 14px; color: #999; margin-bottom: 2rem; font-weight: 500; }
-    .breadcrumb a { color: #185FA5; text-decoration: none; transition: color 0.2s; }
-    .breadcrumb a:hover { color: #0C447C; }
-    h1 { font-size: 36px; font-weight: 800; margin-bottom: 0.75rem; color: #111; }
+    .breadcrumb a { color: #c81e32; text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: #8b1528; }
+    h1 { font-size: 36px; font-weight: 800; margin-bottom: 0.75rem; color: #111; background: linear-gradient(135deg, #111, #c81e32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .subtitle { font-size: 16px; color: #666; margin-bottom: 2.5rem; line-height: 1.7; }
     h2 { font-size: 24px; font-weight: 800; margin: 2.5rem 0 1.5rem; color: #111; }
     .chapters { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 2rem; }
@@ -53,15 +67,15 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, #185FA5, #0C447C);
+      background: linear-gradient(90deg, #c81e32, #8b1528);
       opacity: 0;
       transition: opacity 0.3s;
     }
     .chapter-card:hover {
-      border-color: #185FA5;
-      box-shadow: 0 12px 24px rgba(24,95,165,0.16);
+      border-color: #c81e32;
+      box-shadow: 0 12px 24px rgba(200, 30, 50, 0.16);
       transform: translateY(-3px);
-      background: linear-gradient(135deg, #f8fbff 0%, #f5f8fd 100%);
+      background: linear-gradient(135deg, #fff5f6 0%, #faf1f2 100%);
     }
     .chapter-card:hover::before {
       opacity: 1;
