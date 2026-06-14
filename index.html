@@ -155,22 +155,19 @@
       flex-direction: column;
       justify-content: space-between;
     }
-    .course-card::after {
-      content: '';
+    .card-art {
       position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 60px;
-      height: 60px;
-      opacity: 0.08;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: bottom right;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
     }
-    .apush-card::after { background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23c81e32"><polygon points="50,20 40,35 60,35" fill="%23c81e32"/><rect x="45" y="35" width="10" height="40" fill="%23c81e32"/></g></svg>'); }
-    .apworld-card::after { background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23b8860b"><circle cx="50" cy="50" r="35" fill="%23b8860b" stroke="%23b8860b" stroke-width="2"/></g></svg>'); }
-    .apeuro-card::after { background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%239333ea"><rect x="48" y="30" width="4" height="55" fill="%239333ea"/><polygon points="46,32 54,32 50,20" fill="%239333ea"/></g></svg>'); }
-    .apgov-card::after { background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%2322c55e"><rect x="44" y="20" width="12" height="55" fill="%2322c55e"/><circle cx="50" cy="20" r="5" fill="%2322c55e"/></g></svg>'); }
+    .course-icon, .course-title, .course-sub, .course-tag {
+      position: relative;
+      z-index: 1;
+    }
     .course-card::before {
       content: '';
       position: absolute;
@@ -198,8 +195,8 @@
     .apworld-card:hover { border-color: #b8860b; box-shadow: 0 12px 24px rgba(184, 134, 11, 0.16); background: linear-gradient(135deg, #fffaf5 0%, #fdf7f0 100%); }
     .apeuro-card::before { background: linear-gradient(90deg, #9333ea, #7e22ce); }
     .apeuro-card:hover { border-color: #9333ea; box-shadow: 0 12px 24px rgba(147, 51, 234, 0.16); background: linear-gradient(135deg, #faf5ff 0%, #f5f1fa 100%); }
-    .apgov-card::before { background: linear-gradient(90deg, #22c55e, #16a34a); }
-    .apgov-card:hover { border-color: #22c55e; box-shadow: 0 12px 24px rgba(34, 197, 94, 0.16); background: linear-gradient(135deg, #f0fdf4 0%, #f0fdf4 100%); }
+    .apgov-card::before { background: linear-gradient(90deg, #4a7c59, #355e42); }
+    .apgov-card:hover { border-color: #4a7c59; box-shadow: 0 12px 24px rgba(74, 124, 89, 0.16); background: linear-gradient(135deg, #f1f6f2 0%, #f1f6f2 100%); }
     .course-icon { font-size: 28px; margin-bottom: 1rem; }
     .course-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #111; }
     .course-sub { font-size: 13px; color: #888; font-weight: 500; margin-bottom: 0.75rem; }
@@ -357,7 +354,44 @@
     <div class="courses">
       <a href="courses/apush.html" style="text-decoration:none;color:inherit;">
         <div class="course-card apush-card">
-          <div class="course-icon">🇺🇸</div>
+          <svg class="card-art" viewBox="0 0 240 180" preserveAspectRatio="xMaxYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="apushGlow" cx="80%" cy="80%" r="75%">
+                <stop offset="0%" stop-color="#c81e32" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="#c81e32" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="apushBuild" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c81e32" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#8b1528" stop-opacity="0.10"/>
+              </linearGradient>
+              <linearGradient id="apushStatue" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c81e32" stop-opacity="0.30"/>
+                <stop offset="100%" stop-color="#8b1528" stop-opacity="0.16"/>
+              </linearGradient>
+              <radialGradient id="apushTorch" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffd166" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#ffd166" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="195" cy="150" r="110" fill="url(#apushGlow)"/>
+            <rect x="150" y="110" width="22" height="70" fill="url(#apushBuild)"/>
+            <rect x="176" y="90" width="18" height="90" fill="url(#apushBuild)"/>
+            <rect x="198" y="120" width="26" height="60" fill="url(#apushBuild)"/>
+            <rect x="128" y="130" width="18" height="50" fill="url(#apushBuild)"/>
+            <circle cx="178" cy="38" r="22" fill="url(#apushTorch)"/>
+            <rect x="158" y="150" width="40" height="30" fill="url(#apushStatue)"/>
+            <path d="M168 150 L162 90 Q170 80 178 80 Q186 80 194 90 L188 150 Z" fill="url(#apushStatue)"/>
+            <path d="M186 95 L200 55 L206 58 L194 98 Z" fill="url(#apushStatue)"/>
+            <ellipse cx="203" cy="50" rx="7" ry="10" fill="url(#apushStatue)"/>
+            <circle cx="178" cy="74" r="9" fill="url(#apushStatue)"/>
+            <polygon points="170,68 173,55 176,68" fill="url(#apushStatue)"/>
+            <polygon points="178,68 181,52 184,68" fill="url(#apushStatue)"/>
+            <polygon points="186,68 189,55 192,68" fill="url(#apushStatue)"/>
+            <circle cx="60" cy="30" r="2" fill="#c81e32" opacity="0.18"/>
+            <circle cx="90" cy="55" r="1.5" fill="#c81e32" opacity="0.14"/>
+            <circle cx="40" cy="70" r="1.5" fill="#c81e32" opacity="0.12"/>
+          </svg>
+          <div class="course-icon">🗽</div>
           <div class="course-title">AP U.S. History</div>
           <div class="course-sub">APUSH · Periods 1–9</div>
           <div class="course-tag">Most popular</div>
@@ -365,6 +399,34 @@
       </a>
       <a href="courses/apworld.html" style="text-decoration:none;color:inherit;">
         <div class="course-card apworld-card">
+          <svg class="card-art" viewBox="0 0 240 180" preserveAspectRatio="xMaxYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="worldGlow" cx="80%" cy="75%" r="75%">
+                <stop offset="0%" stop-color="#b8860b" stop-opacity="0.20"/>
+                <stop offset="100%" stop-color="#b8860b" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="worldGlobe" cx="35%" cy="35%" r="70%">
+                <stop offset="0%" stop-color="#e0ad2f" stop-opacity="0.30"/>
+                <stop offset="100%" stop-color="#8b6708" stop-opacity="0.14"/>
+              </radialGradient>
+              <linearGradient id="worldContinent" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8b6708" stop-opacity="0.24"/>
+                <stop offset="100%" stop-color="#6b4f06" stop-opacity="0.15"/>
+              </linearGradient>
+            </defs>
+            <circle cx="195" cy="150" r="110" fill="url(#worldGlow)"/>
+            <circle cx="185" cy="100" r="62" fill="url(#worldGlobe)"/>
+            <path d="M150 70 Q165 60 180 68 Q195 75 188 90 Q175 100 160 92 Q148 84 150 70 Z" fill="url(#worldContinent)"/>
+            <path d="M195 95 Q215 90 222 108 Q224 128 208 135 Q192 132 190 115 Q188 102 195 95 Z" fill="url(#worldContinent)"/>
+            <path d="M150 115 Q165 112 170 128 Q168 142 152 142 Q140 135 142 122 Q144 116 150 115 Z" fill="url(#worldContinent)"/>
+            <ellipse cx="185" cy="100" rx="62" ry="22" fill="none" stroke="#b8860b" stroke-width="1.5" opacity="0.18"/>
+            <ellipse cx="185" cy="100" rx="26" ry="62" fill="none" stroke="#b8860b" stroke-width="1.5" opacity="0.18"/>
+            <line x1="123" y1="100" x2="247" y2="100" stroke="#b8860b" stroke-width="1.5" opacity="0.16"/>
+            <ellipse cx="185" cy="100" rx="92" ry="38" fill="none" stroke="#b8860b" stroke-width="1" opacity="0.10" transform="rotate(-18 185 100)"/>
+            <circle cx="55" cy="35" r="2" fill="#b8860b" opacity="0.16"/>
+            <circle cx="85" cy="60" r="1.5" fill="#b8860b" opacity="0.13"/>
+            <circle cx="40" cy="80" r="1.5" fill="#b8860b" opacity="0.11"/>
+          </svg>
           <div class="course-icon">🌍</div>
           <div class="course-title">AP World History</div>
           <div class="course-sub">Units 1–9</div>
@@ -373,6 +435,36 @@
       </a>
       <a href="courses/apeuro.html" style="text-decoration:none;color:inherit;">
         <div class="course-card apeuro-card">
+          <svg class="card-art" viewBox="0 0 240 180" preserveAspectRatio="xMaxYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="euroGlow" cx="80%" cy="75%" r="75%">
+                <stop offset="0%" stop-color="#9333ea" stop-opacity="0.20"/>
+                <stop offset="100%" stop-color="#9333ea" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="euroBuild" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#9333ea" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#7e22ce" stop-opacity="0.10"/>
+              </linearGradient>
+              <linearGradient id="euroTower" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a855f7" stop-opacity="0.32"/>
+                <stop offset="100%" stop-color="#7e22ce" stop-opacity="0.16"/>
+              </linearGradient>
+            </defs>
+            <circle cx="195" cy="150" r="110" fill="url(#euroGlow)"/>
+            <rect x="130" y="125" width="24" height="55" fill="url(#euroBuild)"/>
+            <polygon points="130,125 154,125 142,113" fill="url(#euroBuild)"/>
+            <rect x="208" y="118" width="24" height="62" fill="url(#euroBuild)"/>
+            <polygon points="208,118 232,118 220,106" fill="url(#euroBuild)"/>
+            <path d="M178 180 L160 180 L172 120 L168 70 L188 70 L184 120 L196 180 Z" fill="url(#euroTower)"/>
+            <line x1="172" y1="120" x2="184" y2="120" stroke="#9333ea" stroke-width="2" opacity="0.22"/>
+            <line x1="168" y1="95" x2="188" y2="95" stroke="#9333ea" stroke-width="2" opacity="0.22"/>
+            <line x1="163" y1="150" x2="193" y2="150" stroke="#9333ea" stroke-width="2.5" opacity="0.20"/>
+            <path d="M176 70 L172 50 L184 50 L180 70 Z" fill="url(#euroTower)"/>
+            <path d="M176 50 L178 38 L182 38 L180 50 Z" fill="url(#euroTower)"/>
+            <circle cx="60" cy="32" r="2" fill="#9333ea" opacity="0.16"/>
+            <circle cx="92" cy="58" r="1.5" fill="#9333ea" opacity="0.13"/>
+            <circle cx="40" cy="75" r="1.5" fill="#9333ea" opacity="0.11"/>
+          </svg>
           <div class="course-icon">🏰</div>
           <div class="course-title">AP Euro</div>
           <div class="course-sub">European History</div>
@@ -381,6 +473,40 @@
       </a>
       <a href="courses/apgov.html" style="text-decoration:none;color:inherit;">
         <div class="course-card apgov-card">
+          <svg class="card-art" viewBox="0 0 240 180" preserveAspectRatio="xMaxYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="govGlow" cx="80%" cy="75%" r="75%">
+                <stop offset="0%" stop-color="#4a7c59" stop-opacity="0.20"/>
+                <stop offset="100%" stop-color="#4a7c59" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="govBuild" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4a7c59" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#355e42" stop-opacity="0.10"/>
+              </linearGradient>
+              <radialGradient id="govDome" cx="50%" cy="20%" r="80%">
+                <stop offset="0%" stop-color="#7a9c87" stop-opacity="0.32"/>
+                <stop offset="100%" stop-color="#355e42" stop-opacity="0.16"/>
+              </radialGradient>
+            </defs>
+            <circle cx="195" cy="150" r="110" fill="url(#govGlow)"/>
+            <rect x="140" y="140" width="100" height="40" fill="url(#govBuild)"/>
+            <rect x="150" y="120" width="8" height="22" fill="url(#govBuild)"/>
+            <rect x="166" y="120" width="8" height="22" fill="url(#govBuild)"/>
+            <rect x="182" y="120" width="8" height="22" fill="url(#govBuild)"/>
+            <rect x="198" y="120" width="8" height="22" fill="url(#govBuild)"/>
+            <rect x="214" y="120" width="8" height="22" fill="url(#govBuild)"/>
+            <polygon points="142,120 238,120 190,98" fill="url(#govBuild)"/>
+            <path d="M170 100 Q170 65 190 65 Q210 65 210 100 Z" fill="url(#govDome)"/>
+            <rect x="186" y="48" width="8" height="17" fill="url(#govDome)"/>
+            <circle cx="190" cy="46" r="4" fill="url(#govDome)"/>
+            <g opacity="0.85">
+              <rect x="86" y="40" width="6" height="55" fill="url(#govBuild)"/>
+              <circle cx="89" cy="38" r="4" fill="url(#govBuild)"/>
+              <rect x="64" y="52" width="50" height="2.5" fill="url(#govBuild)"/>
+              <polygon points="64,54 76,76 52,76" fill="url(#govBuild)"/>
+              <polygon points="114,54 126,76 102,76" fill="url(#govBuild)"/>
+            </g>
+          </svg>
           <div class="course-icon">⚖️</div>
           <div class="course-title">AP Gov</div>
           <div class="course-sub">U.S. Government</div>

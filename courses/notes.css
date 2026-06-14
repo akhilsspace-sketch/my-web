@@ -1,0 +1,244 @@
+/* ── Shared styles for chapter/unit notes pages ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #f9f8f5 0%, #f5f3f0 100%);
+  color: #1a1a1a;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  position: relative;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(var(--accent-rgb), 0.02) 35px, rgba(var(--accent-rgb), 0.02) 70px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Course accent themes ── */
+body.course-world { --accent: #b8860b; --accent-dark: #8b6708; --accent-rgb: 184, 134, 11; --accent-tint: #fffaf5; --accent-tint2: #fdf7f0; }
+body.course-us    { --accent: #c81e32; --accent-dark: #8b1528; --accent-rgb: 200, 30, 50;  --accent-tint: #fff5f6; --accent-tint2: #faf1f2; }
+body.course-euro  { --accent: #9333ea; --accent-dark: #7e22ce; --accent-rgb: 147, 51, 234; --accent-tint: #faf5ff; --accent-tint2: #f5f1fa; }
+body.course-gov   { --accent: #4a7c59; --accent-dark: #355e42; --accent-rgb: 74, 124, 89;  --accent-tint: #f1f6f2; --accent-tint2: #f1f6f2; }
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e2d9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 1;
+}
+.nav-logo { font-size: 22px; font-weight: 800; color: #1a1a1a; }
+.nav-logo span { color: #185FA5; }
+.nav-logo a { text-decoration: none; color: inherit; cursor: pointer; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 15px; color: #666; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: #185FA5; }
+
+/* ── CONTENT ── */
+.content { position: relative; z-index: 1; padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+.breadcrumb { font-size: 14px; color: #999; margin-bottom: 1.5rem; font-weight: 500; }
+.breadcrumb a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--accent-dark); }
+
+.unit-label { font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 0.5rem; }
+h1 { font-size: 34px; font-weight: 800; margin-bottom: 0.5rem; color: #111; background: linear-gradient(135deg, #111, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.unit-meta { font-size: 14px; color: #888; font-weight: 600; margin-bottom: 2rem; }
+.unit-meta span { display: inline-block; padding: 4px 12px; border-radius: 20px; background: var(--accent-tint); color: var(--accent-dark); margin-right: 8px; font-size: 12px; }
+
+/* ── OVERVIEW / CALLOUT BOXES ── */
+.overview-box, .exam-tip {
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2.5rem;
+  border-left: 4px solid var(--accent);
+  background: linear-gradient(135deg, var(--accent-tint) 0%, #fff 100%);
+  box-shadow: 0 2px 8px rgba(var(--accent-rgb), 0.08);
+}
+.overview-box h3, .exam-tip h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-dark);
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+.overview-box p, .exam-tip p { font-size: 16.5px; color: #383838; line-height: 1.7; }
+.exam-tip { margin: 2rem 0; }
+
+/* ── TOPIC SECTIONS ── */
+.topic-section { margin: 2.75rem 0; }
+.topic-section h2 {
+  font-size: 21px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--accent-tint);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topic-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  border-radius: 8px;
+  width: 34px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.topic-section ul { list-style: none; margin-left: 0.25rem; }
+.topic-section ul li {
+  font-size: 16.5px;
+  color: #383838;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+  padding-left: 1.3rem;
+  position: relative;
+}
+.topic-section ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.6;
+}
+.topic-section ul li ul { margin-top: 0.5rem; margin-left: 0.5rem; }
+.topic-section ul li ul li::before { background: var(--accent); opacity: 0.3; width: 5px; height: 5px; }
+
+.key-term {
+  background: var(--accent-tint);
+  color: var(--accent-dark);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+/* ── COMPARISON TABLE ── */
+.table-wrap { overflow-x: auto; margin: 1.25rem 0; border-radius: 12px; box-shadow: 0 2px 8px rgba(var(--accent-rgb), 0.08); }
+.comparison-table { width: 100%; border-collapse: collapse; background: #fff; font-size: 15px; min-width: 560px; }
+.comparison-table td { color: #383838; line-height: 1.55; }
+.comparison-table th, .comparison-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+.comparison-table thead th {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.comparison-table tbody th {
+  background: var(--accent-tint);
+  color: var(--accent-dark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.comparison-table tbody tr:last-child td, .comparison-table tbody tr:last-child th { border-bottom: none; }
+.comparison-table tbody tr:hover td, .comparison-table tbody tr:hover th { background: var(--accent-tint2); }
+
+/* ── TIMELINE ── */
+.timeline { position: relative; margin: 1.5rem 0 1rem; padding-left: 2rem; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--accent-tint);
+}
+.timeline-item { position: relative; padding-bottom: 1.4rem; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-tint);
+  border: 3px solid var(--accent);
+}
+.timeline-date { font-size: 12px; font-weight: 800; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+.timeline-desc { font-size: 15px; color: #383838; line-height: 1.6; }
+
+/* ── VOCAB GLOSSARY ── */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 1.25rem 0; }
+.vocab-item {
+  background: #fff;
+  border: 1px solid #e5e2d9;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  box-shadow: 0 2px 6px rgba(var(--accent-rgb), 0.06);
+}
+.vocab-term { font-size: 15px; font-weight: 800; color: var(--accent-dark); margin-bottom: 3px; }
+.vocab-def { font-size: 14px; color: #5a5a5a; line-height: 1.55; }
+
+/* ── UNIT NAV (prev/next) ── */
+.unit-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 3.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e2d9;
+}
+.unit-nav a {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--accent-tint);
+  transition: all 0.2s;
+}
+.unit-nav a:hover { background: var(--accent); color: #fff; }
+.unit-nav .placeholder { visibility: hidden; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid #e5e2d9;
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+  font-size: 13px;
+  color: #999;
+  margin-top: 4rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  nav { flex-direction: column; gap: 1rem; padding: 1rem; }
+  .nav-links { display: none; }
+  h1 { font-size: 26px; }
+  .content { padding: 2rem 1.25rem; }
+  .topic-section h2 { font-size: 18px; }
+}
